@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import * as ImagePicker from 'expo-image-picker'; 
 import { RNS3 } from 'react-native-s3-upload';
 import RNPickerSelect from 'react-native-picker-select';
+import data from '../.expo/config.json'
 
 export default class MakeTask extends Component {
     constructor(props){
@@ -62,8 +63,8 @@ export default class MakeTask extends Component {
             keyPrefix: "uploads/",
             bucket: "elasticbeanstalk-us-east-1-486393231698",
             region: "us-east-1",
-            accessKey: "AKIAXCP2LXFJHIGG7FHQ",
-            secretKey: "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",
+            accessKey: data.api_key,
+            secretKey: data.secret_key,
             successActionStatus: 201
         }
 

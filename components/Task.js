@@ -7,6 +7,7 @@ import Axios from 'axios'
 import * as ImagePicker from 'expo-image-picker'; 
 import { RNS3 } from 'react-native-s3-upload';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
+import data from '../.expo/config.json'
 
 export default class Tasks extends Component {
     constructor(props){
@@ -134,8 +135,8 @@ export default class Tasks extends Component {
             keyPrefix: "uploads/",
             bucket: "elasticbeanstalk-us-east-1-486393231698",
             region: "us-east-1",
-            accessKey: "AKIAXCP2LXFJHIGG7FHQ",
-            secretKey: "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",
+            accessKey: data.api_key,
+            secretKey: data.secret_Key,
             successActionStatus: 201
         }
 

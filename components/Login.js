@@ -61,9 +61,18 @@ export default class Login extends Component {
                     email: '',
                     password: ''
                 })
-                await global.refreshBoards()
-                await global.updateLoginTab()
-                global.updateTabCompleted()
+                if(global.refreshBoards) {
+                    global.refreshBoards()
+                }
+                if(global.updateLoginTab){
+                    global.updateLoginTab()
+                }
+                if(global.updateCompleted){
+                    global.updateCompleted()
+                }
+                if(global.updateTabCompleted){
+                    global.updateTabCompleted()
+                }
                 this.props.navigation.navigate('Boards')
             }
         } catch (error) {
